@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Selector</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+      body {
+        font-size: 17px;
+        font-family: serif;
+        background: #f4f4f4;
+        line-height: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery</h1>
+    </header>
+
+    <div id="container">
+      <h3>Mouse Events</h3>
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <p id="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi
+        odit, incidunt autem id consequuntur.
+      </p>
+      <h1 id="coords"></h1>
+
+      <form action="" id="form">
+        <label>Name</label>
+        <input type="text" name="name" id="name" />
+        <br />
+        <label>email</label>
+        <input type="email" name="email" id="email" />
+        <br />
+        <label>Gender</label>
+        <select name="gender" id="gener">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // $("#btn1").click(function () {
+        //   alert("Button Clicked");
+        // });
+        // $("#btn1").on("mouseover", function () {
+        //   alert("Button Clicked");
+        // });
+        // $("#btn2").on("click", function () {
+        //   $("#p1").show();
+        // });
+        // click , dblclick , hover , mouseenter , mouseleave , mousemove ,
+        // mouseup , mousedown ,
+        // $("#btn1").on("mouseup", function () {
+        //   // $("#p1").hide();
+        //   $("#p1").toggle();
+        // });
+        // $("#btn1").click(function (e) {
+        //   console.log(e);
+        // });
+        // $("#btn1").click(function (e) {
+        //   // alert(e.currentTarget.id);
+        //   // alert(e.currentTarget.innerHTML);
+        //   // alert(e.currentTarget.outerHTML);
+        // });
+
+        // $(document).on("mousemove", function (e) {
+        //   $("#coords").html("coords: Y:" + e.clientY + "x:" + e.clientX);
+        // });
+
+        // $("input").focus(function () {
+        //   // alert("Focus");
+        //   $(this).css("background", "pink");
+        // });
+        // $("input").blur(function () {
+        //   // alert("Focus");
+        //   $(this).css("background", "red");
+        // });
+
+        $("#form").submit(function (e) {
+          e.preventDefault();
+          var name = $("input#name").val();
+
+          console.log(name);
+        });
+      });
+    </script>
+  </body>
+</html>

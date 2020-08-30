@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Selector</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+      body {
+        font-size: 17px;
+        font-family: serif;
+        background: #f4f4f4;
+        line-height: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+
+      .myClass {
+        color: blue;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery</h1>
+    </header>
+    <div id="container">
+      <button id="btn1">Button 1</button>
+      <p class="p1">Lorem ipsum dolor sit amet.</p>
+      <p class="p2">Lorem ipsum dolor sit amet consectetur.</p>
+      <div id="myDiv"></div>
+      <input type="text" id="newItem" />
+      <ul>
+        <li>List Items</li>
+        <li>List Items</li>
+        <li>List Items</li>
+        <li>List Items</li>
+        <li>List Items</li>
+      </ul>
+      <a href="http://google.com">Google</a>
+    </div>
+    <script>
+      $(document).ready(function () {
+        // $("p.p1").css("color", "red");
+        // $("p.p1").css({
+        //   color: "red",
+        //   background: "#ccc",
+        // });
+        // // $("p.p2").addClass("myClass");
+        // // $("p.p2").removeClass("myClass");
+        // $("#btn1").click(function () {
+        //   $("p.p2").toggleClass("myClass");
+        // });
+        // $("#myDiv").html("<h3>Hello World<h3/>");
+        // $("ul").append("<li>Append List Items</li>");
+        // $("ul").prepend("<li>Prepend List Items</li>");
+        // $("ul").empty();
+        // $("ul").detach();
+        // $("a").attr("target", "_blank");
+        // $("p").wrap("<h1>");
+        // $("p").wrapAll("<h1>");
+
+        $("#newItem").keyup(function (e) {
+          var code = e.which;
+
+          if (code == 13) {
+            e.preventDefault;
+            $("ul").append("<li>" + e.target.value + "<li/>");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

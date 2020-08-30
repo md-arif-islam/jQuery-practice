@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Selector</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+      body {
+        font-size: 17px;
+        font-family: serif;
+        background: #f4f4f4;
+        line-height: 1.5rem;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+
+      #box1 {
+        background: #333;
+        color: #fff;
+        width: 500px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      #box2 {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery</h1>
+    </header>
+
+    <div id="container">
+      <button id="btnFadeIn">Fade In</button>
+      <button id="btnFadeOut">Fade Out</button>
+      <button id="btnFadeToggle">Fade Toggle</button>
+      <hr />
+      <button id="btnslideUp">Slide Up</button>
+      <button id="btnslideDown">Slide Down</button>
+      <button id="btnslideToogle">Slide Toggle</button>
+      <button id="btnsstop">Stop</button>
+      <hr />
+      <div id="box1">Hello World</div>
+      <hr />
+      <hr />
+      <button id="btnAnimateLeft">Animate Left</button>
+      <button id="btnAnimateRight">Animate Right</button>
+      <button id="btnAnimateAround">Amimate Aroud</button>
+      <hr />
+      <div id="box2"></div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // $("#btnFadeIn").click(function () {
+        //   $("#box1").fadeIn();
+        // });
+        // $("#btnFadeOut").click(function () {
+        //   $("#box1").fadeOut();
+        // });
+        // $("#btnFadeToggle").click(function () {
+        //   $("#box1").fadeToggle();
+        // });
+        $("#btnslideUp").click(function () {
+          $("#box1").slideUp();
+        });
+        $("#btnslideDown").click(function () {
+          $("#box1").slideDown();
+        });
+        $("#btnslideToogle").click(function () {
+          $("#box1").slideToggle();
+        });
+
+        $("#btnsstop").click(function () {
+          $("#box1").stop();
+        });
+
+        $("#btnAnimateLeft").click(function () {
+          $("#box2").animate({
+            left: 0,
+            width: "100px",
+            height: "100px",
+            opacity: "1",
+          });
+        });
+
+        $("#btnAnimateRight").click(function () {
+          $("#box2").animate({
+            left: 500,
+            height: "300px",
+            width: "300px",
+            opacity: "0.5",
+          });
+        });
+
+        $("#btnAnimateAround").click(function () {
+          var box = $("#box2");
+
+          box.animate({
+            left: 300,
+          });
+          box.animate({
+            top: 300,
+          });
+          box.animate({
+            left: 0,
+            top: 300,
+          });
+          box.animate({
+            left: 0,
+            top: 0,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
